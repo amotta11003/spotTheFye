@@ -6,7 +6,7 @@ export const getUser = state => state.authentication;
 
 export const login = () => dispatch => {
     console.log("LOGGING IN");
-    window.location.href = 'http://localhost:9000/auth/login';
+    window.location.href = 'https://spotthefye.herokuapp.com/auth/login';
 };
 
 export const saveLogin = () => dispatch => {
