@@ -9,7 +9,7 @@ import TopStreamed from '../../components/TopStreamed';
 import Parallax from '../../components/Parallax';
 import GridContainer from '../../components/Grid/GridContainer';
 import GridItem from '../../components/Grid/GridItem';
-import Button from '@material-ui/core/Button';
+import Info from '../../components/Typography/Info';
 import { fetchTopStreamed, getAppViewData, updateTimeRangeArtists, 
   updateTimeRangeTracks, fetchSearchResultsAsync, updateSearchType, 
   updateGenres, updateQuery, addSeed, updateStep,
@@ -76,9 +76,9 @@ class AppView extends Component {
               attrChange={this.props.attrChange}
               switchChange={this.props.switchChange}
               />
-            <Button variant="contained" color="primary" onClick={this.props.logout}>
-              Log Out
-            </Button>
+            <h4>To Log Out...</h4><br/>
+            <Info>Go to <a href={'https://accounts.spotify.com/'}>accounts.spotify.com</a> to log out. 
+            You can then return to spotthefye.herokuapp.com to sign in with a different account!</Info>
           </div>
         </div>
       </div>
