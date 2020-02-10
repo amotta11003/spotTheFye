@@ -1,5 +1,4 @@
 import { history, parseTokens } from '../helpers';
-import { api } from '../services';
 
 //Selectors
 export const getUser = state => state.authentication;
@@ -45,7 +44,7 @@ export const logout = () => dispatch => {
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
     localStorage.removeItem('userID');
-    history.push('/login');
+    window.location.href = 'https://accounts.spotify.com/';
     return dispatch(logoutSuccess({
             loggedIn: false,
             access: null,

@@ -71,13 +71,6 @@ router.get('/callback', function(req, res) {
                     userID: body.id
             }));
             });
-            // we can also pass the token to the browser to make requests from there
-            /*res.redirect('http://localhost:3000/callback/#' +
-                querystring.stringify({
-                    access_token: access_token,
-                    refresh_token: refresh_token,
-                    userID: userID
-            }));*/
         } else {
           res.redirect('/#' +
             querystring.stringify({
