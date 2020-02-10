@@ -15,6 +15,14 @@ const appViewStyle = {
     color: "#FFFFFF",
     textDecoration: "none"
   },
+  header: {
+    ...title,
+    display: "inline-block",
+    position: "relative",
+    minHeight: "32px",
+    color: "#6a0dad",
+    textDecoration: "none"
+  },
   subtitle: {
     fontSize: "1.313rem",
     maxWidth: "500px",

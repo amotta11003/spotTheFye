@@ -76,7 +76,7 @@ class AppView extends Component {
               attrChange={this.props.attrChange}
               switchChange={this.props.switchChange}
               />
-            <h4 className={classes.title}>To Log Out...</h4><br/>
+            <h4 className={classes.header}>To Log Out...</h4><br/>
             <Info>Go to <a href={'https://accounts.spotify.com/'}>accounts.spotify.com</a> to log out. 
             You can then return to spotthefye.herokuapp.com to sign in with a different account!</Info><br/><br/>
           </div>
