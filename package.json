@@ -18,7 +18,8 @@
     "morgan": "~1.9.1",
     "node-sass": "^4.13.1",
     "react-chips": "^0.8.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "spotify-web-api-node": "4.0.0"
   },
   "devDependencies": {
     "clean-css": "^4.2.3",
