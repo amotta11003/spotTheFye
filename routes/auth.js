@@ -36,12 +36,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/login', function(req, res) {
     console.log("LOGGING IN (SERVER SIDE)");
-    console.log("CLIENT ID: ", spotifyApi._credentials.client_id);
-    console.log("CLIENT ID: ", process.env.SPOTIFY_CLIENT_ID);
-    console.log("CLIENT SECRET: ", spotifyApi._credentials.client_secret);
-    console.log("CLIENT SECRET: ", process.env.SPOTIFY_CLIENT_SECRET);
-    console.log("REDIRECT URI: ", spotifyApi._credentials.redirect_uri);
-    console.log("REDIRECT URI: ", process.env.REDIRECT_URI);
     var state = generateRandomString(16);
     res.cookie(stateKey, state);
   
