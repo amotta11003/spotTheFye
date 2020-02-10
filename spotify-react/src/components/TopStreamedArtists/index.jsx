@@ -11,6 +11,12 @@ import TimeRangeButton from '../TimeRangeButton';
 import TopStreamedArtist from '../TopStreamedArtist';
 import { AggArtistMetrics } from '../AggMetrics';
 
+const timeRanges = {
+    'shortterm': 'Past Month',
+    'mediumterm': 'Past 6 Months',
+    'longterm': 'All Time'
+}
+
 const TopStreamedArtists = ({
     topStreamed,
     timeRange,
@@ -19,6 +25,9 @@ const TopStreamedArtists = ({
 }) => (
     <div className='top-streamed-artists'>
         <TimeRangeButton onSelect={updateTimeRangeArtists}/>
+        <div align='center'>
+            <h2 className={classes.title}>{timeRanges[timeRange.artists]}</h2>
+        </div>
         <AggArtistMetrics topStreamed={topStreamed} />
         <TableContainer>
             <Table aria-label="simple table">

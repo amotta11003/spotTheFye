@@ -5,6 +5,7 @@ import RegularButton from '../CustomButton';
 import GenreSearch from '../GenreSearch';
 import AttrSlider from '../AttrSlider';
 import NumberSelect from '../NumberSelect';
+import Danger from '../Typography/Danger';
 import InfoIcon from '@material-ui/icons/Info';
 import Tooltip from '@material-ui/core/Tooltip';
 import Small from '../../components/Typography/Small';
@@ -21,8 +22,11 @@ const addSeedGenreAttrsStyle = {
       verticalAlign: 'middle',
       padding: '9px',
       textDecoration: "none"
+    },
+    tooltip: {
+        fontSize: "30"
     }
-  }
+};
 
 
 const AddSeedGenreAttrs = ({
@@ -45,12 +49,12 @@ const AddSeedGenreAttrs = ({
         </span><br/><br/>
         <div align='center'>
             <h3 className={classNames(classes.title, classes.attrs)}>Target Attributes</h3>
-            <Tooltip disableFocusListener disableTouchListener className={classes.attrs}
+            <Tooltip className={classes.attrs} disableFocusListener disableTouchListener
                 title={'Tracks with the attribute values nearest to the target values will be preferred. ' + 
-                    'All target values will be weighed equally in ranking results. '}>
+                    'All target values will be weighed equally in ranking results.'}>
                 <InfoIcon/>
             </Tooltip><br/>
-            <Small>If you experience issues dragging slider, use keyboard's directional pad.</Small>
+            <Danger>If you experience issues dragging slider, use keyboard's directional pad.</Danger>
         </div>
         {playlistGenerator.attrs.map((attr, index) => (
             <AttrSlider

@@ -10,14 +10,21 @@ const initialState = {
     recommendations: [],
     playlist: {},
     attrs: [
-        {name: 'acousticness',
+        {name: 'popularity',
+        value: -1,
+        checked: false,
+        min: 0,
+        max: 100,
+        step: 10},
+
+        {name: 'danceability',
         value: -1,
         checked: false,
         min: 0,
         max: 1,
         step: 0.1},
-        
-        {name: 'danceability',
+
+        {name: 'valence',
         value: -1,
         checked: false,
         min: 0,
@@ -31,21 +38,15 @@ const initialState = {
         max: 1,
         step: 0.1},
         
-        {name: 'instrumentalness',
+        {name: 'acousticness',
         value: -1,
         checked: false,
         min: 0,
         max: 1,
         step: 0.1},
+
         
-        {name: 'popularity',
-        value: -1,
-        checked: false,
-        min: 0,
-        max: 100,
-        step: 10},
-        
-        {name: 'valence',
+        {name: 'instrumentalness',
         value: -1,
         checked: false,
         min: 0,
@@ -167,7 +168,7 @@ export function playlistGenerator(state= initialState, action) {
         case "ATTR_CHANGE":
             const attributes = state.attrs;
             switch(action.payload.attr){
-                case "acousticness":
+                case "popularity":
                     var acous1 = attributes;
                     acous1.splice(0, 1, {name: attributes[0].name,
                         value: action.payload.value,
@@ -185,7 +186,7 @@ export function playlistGenerator(state= initialState, action) {
                         max: attributes[1].max,
                         step: attributes[1].step});
                     return Object.assign({}, state, {attrs: dance1});
-                case "energy":
+                case "valence":
                     var energy1 = attributes;
                     energy1.splice(2, 1, {name: attributes[2].name,
                         value: action.payload.value,
@@ -194,7 +195,7 @@ export function playlistGenerator(state= initialState, action) {
                         max: attributes[2].max,
                         step: attributes[2].step});
                     return Object.assign({}, state, {attrs: energy1}); 
-                case "instrumentalness":
+                case "energy":
                     var inst1 = attributes;
                     inst1.splice(3, 1, {name: attributes[3].name,
                         value: action.payload.value,
@@ -203,7 +204,7 @@ export function playlistGenerator(state= initialState, action) {
                         max: attributes[3].max,
                         step: attributes[3].step});
                     return Object.assign({}, state, {attrs: inst1});    
-                case "popularity":
+                case "acousticness":
                     var pop1 = attributes;
                     pop1.splice(4, 1, {name: attributes[4].name,
                         value: action.payload.value,
@@ -212,7 +213,7 @@ export function playlistGenerator(state= initialState, action) {
                         max: attributes[4].max,
                         step: attributes[4].step});
                     return Object.assign({}, state, {attrs: pop1});  
-                case "valence":
+                case "instrumentalness":
                     var val1 = attributes;
                     val1.splice(5, 1, {name: attributes[5].name,
                         value: action.payload.value,
@@ -228,7 +229,7 @@ export function playlistGenerator(state= initialState, action) {
         case "SWITCH_CHANGE":
             const attrs = state.attrs;
             switch(action.payload){
-                case "acousticness":
+                case "popularity":
                     //const acous = state.acousticness;
                     var acous2 = attrs;
                     if (!attrs[0].checked){
@@ -269,7 +270,7 @@ export function playlistGenerator(state= initialState, action) {
                         return Object.assign({}, state, {attrs: dance2});
                     }
                 
-                case "energy":
+                case "valence":
                     var energy2 = attrs;
                     if (!attrs[2].checked){
                         energy2.splice(2, 1, {name: attrs[2].name,
@@ -289,7 +290,7 @@ export function playlistGenerator(state= initialState, action) {
                         return Object.assign({}, state, {attrs: energy2});
                     }
                 
-                case "instrumentalness":
+                case "energy":
                     var inst2 = attrs;
                     if (!attrs[3].checked){
                         inst2.splice(3, 1, {name: attrs[3].name,
@@ -309,7 +310,7 @@ export function playlistGenerator(state= initialState, action) {
                         return Object.assign({}, state, {attrs: inst2});
                     }
                 
-                case "popularity":
+                case "acousticness":
                     var pop2 = attrs;
                     if (!attrs[4].checked){
                         pop2.splice(4, 1, {name: attrs[4].name,
@@ -329,7 +330,7 @@ export function playlistGenerator(state= initialState, action) {
                         return Object.assign({}, state, {attrs: pop2});
                     }
 
-                case "valence":
+                case "instrumentalness":
                     var val2 = attrs;
                     if (!attrs[5].checked){
                         val2.splice(5, 1, {name: attrs[5].name,
@@ -358,14 +359,21 @@ export function playlistGenerator(state= initialState, action) {
                 activeStep: 0, numSongs: 20, seedGenres: [], seedArtists: {}, seedTracks: {}, searchType: 'artists',
                 query: 'Pharrell', searchResults: [], recommendations: [], playlist: {},
                 attrs: [
-                    {name: 'acousticness',
+                    {name: 'popularity',
+                    value: -1,
+                    checked: false,
+                    min: 0,
+                    max: 100,
+                    step: 10},
+            
+                    {name: 'danceability',
                     value: -1,
                     checked: false,
                     min: 0,
                     max: 1,
                     step: 0.1},
-                    
-                    {name: 'danceability',
+            
+                    {name: 'valence',
                     value: -1,
                     checked: false,
                     min: 0,
@@ -379,21 +387,15 @@ export function playlistGenerator(state= initialState, action) {
                     max: 1,
                     step: 0.1},
                     
-                    {name: 'instrumentalness',
+                    {name: 'acousticness',
                     value: -1,
                     checked: false,
                     min: 0,
                     max: 1,
                     step: 0.1},
+            
                     
-                    {name: 'popularity',
-                    value: -1,
-                    checked: false,
-                    min: 0,
-                    max: 100,
-                    step: 10},
-                    
-                    {name: 'valence',
+                    {name: 'instrumentalness',
                     value: -1,
                     checked: false,
                     min: 0,
