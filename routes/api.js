@@ -64,7 +64,7 @@ router.get('/callback', function(req, res) {
             // use the access token to access the Spotify Web API
             request.get(options, function(error, response, body) {
                 console.log(body);
-              res.redirect('http://localhost:9000/callback/#' +
+              res.redirect('https://spotthefye.herokuapp.com/callback/#' +
                 querystring.stringify({
                     access_token: access_token,
                     refresh_token: refresh_token,
