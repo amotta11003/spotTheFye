@@ -24,7 +24,6 @@ Technologies
     - createPlaylist
     - loadPlaylist
  
- - React frontend
-  - Redux used to manage application state
-  - Material-UI used for base components 
-    
+ - React frontend: 
+    - Redux used to manage application state
+    - Material-UI used for base components
