@@ -14,8 +14,7 @@ const TopStreamedArtist = ({artist, rank, classes}) => {
                 <TableCell>
                     <a href={artist.uri}>
                         <span>
-                            <img src={artist.images[0].url} alt={artist.name} 
-                                className={classNames(classes.imgRaised,classes.imgRounded,classes.imgFluid)}/>
+                            <MusicNoteTwoToneIcon/>
                         </span>
                         <h5 className={classes.cardTitle}>{artist.name}</h5>
                     </a>
@@ -34,7 +33,8 @@ const TopStreamedArtist = ({artist, rank, classes}) => {
             <TableCell>
                 <a href={artist.uri}>
                     <span>
-                        <MusicNoteTwoToneIcon/>
+                    <img src={artist.images[0].url} alt={artist.name} 
+                                className={classNames(classes.imgRaised,classes.imgRounded,classes.imgFluid)}/>
                     </span>
                     <h5 className={classes.cardTitle}>{artist.name}</h5>
                 </a>
