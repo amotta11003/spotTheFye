@@ -11,8 +11,7 @@ const TopStreamedArtist = ({artist, rank, classes}) => (
         <TableCell>
             <a href={artist.uri}>
                 <span>
-                    <img src={artist.images[2].url} alt={artist.name} 
-                        className={classNames(classes.imgRaised,classes.imgRounded,classes.imgFluid)}/>
+            
                 </span>
                 <h5 className={classes.cardTitle}>{artist.name}</h5>
             </a>
